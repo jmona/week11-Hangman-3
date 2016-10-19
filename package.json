@@ -1,0 +1,22 @@
+{
+  "name": "week11-hangman",
+  "version": "1.0.0",
+  "description": "Hangman game that runs on command line",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marioaburto10/week11-Hangman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marioaburto10/week11-Hangman/issues"
+  },
+  "homepage": "https://github.com/marioaburto10/week11-Hangman#readme",
+  "dependencies": {
+    "inquirer": "^1.2.2"
+  }
+}
