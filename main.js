@@ -16,10 +16,16 @@ game = {
     //get a random word from the array
     //populate currentWrd (made from Word constructor function) object with letters
     if(this.guessesRemaining == 10){
-      currentWrd = wordBank[Math.floor(Math.random() * wordsList.length)];
+      var randomNumber = Math.floor(Math.random() * this.wordBank.length);
+      this.currentWrd = new Word[this.wordBank[randomNumber]];
+      this.currentWord.getLets();
+      //displays current word as blanks.
+      console.log(this.currentWord.wordRender());
+      this.keepPromptingUser();
+    } else{
+      this.resetGuessesRemaining();
+      this.startGame();
     }
-
-    this.keepPromptingUser();
 
   },
   resetGuessesRemaining : function(){
@@ -29,9 +35,19 @@ game = {
   keepPromptingUser : function(){
     var self = this;
 
-    prompt.get(['guessLetter'], function(err, result) {
-        // result is an object like this: { guessLetter: 'f' }
-        //console.log(result);
+    inquirer.prompt([{
+      name: "choseLetter",
+      type: "input",
+      message: "Choose a letter:",
+      validate: function(value) {
+        if(isLetter(value)){
+          return true;
+        } else{
+          return false;
+        }
+      }
+    }].then(function(answer) {
+       
         
         // console log the letetr you chose
 
