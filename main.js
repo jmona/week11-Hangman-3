@@ -85,4 +85,4 @@ var game = {
   }
 
 
-game.startGame();
+// game.startGame();
