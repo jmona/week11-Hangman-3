@@ -12,7 +12,8 @@ var game = {
   wordBank : Game.newWord.wordList, // create or import a list of words
   wordsWon : 0,// count of words Found
   guessesRemaining : 10, //per word
-  currentWrd : null, //the word object
+  //added o to currentWrd since you refer to is as  currentWord in rest of file
+  currentWord : null, //the word object
   guessedLetters : [],
   startGame : function (wrd){
     //make sure the user has 10 guesses
@@ -20,9 +21,12 @@ var game = {
     //populate currentWrd (made from Word constructor function) object with letters
     if(this.guessesRemaining == 10){
       var randomNumber = Math.floor(Math.random() * this.wordBank.length);
-      this.currentWrd = new Word[this.wordBank[randomNumber]];
-      this.currentWrd.getLets();
+      //changed branket in [this.wordBank[randomNumber]] to parens: (this.wordBank[randomNumber]) Word is a function not an array
+      //added o to currentWrd since you refer to is as  currentWord in rest of file
+      this.currentWord = new Word(this.wordBank[randomNumber]);
+      this.currentWord.getLets();
       //displays current word as blanks.
+      console.log(this.currentWord)
       console.log(this.currentWord.wordRender());
       this.keepPromptingUser();
     } else{
@@ -56,7 +60,7 @@ var game = {
         //this checks if the letter was found and if it is then it sets that specific letter in the word to be found
         that.guessedLetters.push(answer.chosenLetter);
 
-        var found = self.currentWrd.checkIfLetterFound(answer.chosenLetter);
+        var found = self.currentWord.checkIfLetterFound(answer.chosenLetter);
         //if the user guessed incorrectly minus the number of guesses they have left
         // and console.log if they were incorrect or correct
           if(found === 0){
@@ -87,7 +91,7 @@ var game = {
   }
 
 
-// game.startGame();
 
 //added missing curly brace
 }
+game.startGame();
