@@ -12,7 +12,8 @@ var Word = function(wrd){
   this.getLets = function() {
     // populate the collection above with new Letter objects
     for (var i = 0; i < that.word.length; i++) {
-      new newLetter = new Letter(this.word[i]);
+      // change new to var- newLetter sohlud be a variable, and you assign it to be a new Letter object
+      var newLetter = new Letter(this.word[i]);
       this.letters.push(newLetter);
     }
   };
@@ -55,5 +56,7 @@ var Word = function(wrd){
 }
 
 // export to use in main.js
-modeule.exports = Word;
+
+//fixed typo
+module.exports = Word;
 

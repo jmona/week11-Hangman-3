@@ -86,3 +86,6 @@ var game = {
 
 
 // game.startGame();
+
+//added missing curly brace
+}
