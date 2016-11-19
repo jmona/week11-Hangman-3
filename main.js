@@ -1,5 +1,7 @@
 // require prompt to use to make the game 
 var inquirer = require('inquirer');
+//add require for prompt
+var prompt = require('prompt')
 //require the objects/exports you will use
 var Word = require('./word.js');
 var Game = require('./game.js');
