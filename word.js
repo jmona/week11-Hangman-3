@@ -48,7 +48,8 @@ var Word = function(wrd){
     // render the word based on if letters are found or ot found
     that.letters.forEach(function(lttr){
       var currentLetter = lttr.letterRender();
-      display+= currentLetter;
+      //changed display to str since that is the string you should be adding to
+      str+= currentLetter;
     });
 
     return str;

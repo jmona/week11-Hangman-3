@@ -13,7 +13,7 @@ var game = {
   wordsWon : 0,// count of words Found
   guessesRemaining : 10, //per word
   //added o to currentWrd since you refer to is as  currentWord in rest of file
-  currentWord : null, //the word object
+  currentWrd : null, //the word object
   guessedLetters : [],
   startGame : function (wrd){
     //make sure the user has 10 guesses

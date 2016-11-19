@@ -7,7 +7,8 @@ var Letter = function(letter) {
 
   this.letterRender = function() {
     //if appear is false then show the _
-    if(appear == false){
+    //changed appear to this.appear
+    if(this.appear == false){
       return '_';
     } //else appear is true then show character
     else {
